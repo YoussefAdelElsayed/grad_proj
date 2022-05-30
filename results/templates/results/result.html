@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container mt-5" style="height: 100vh; ">
+    <h1 class="text-center fw-bold mb-5 " style="color: #0b3ed9;">اعرف النتيجة</h1>
+    <div class="row ">
+        <div class="col-md-12">
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <form method="post">
+                    {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-danger">
+                        {{message}}
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                    {% csrf_token %}
+                    {{form|crispy}}
+                    <div class="d-flex justify-content-center">
+                        <button class="btn mt-3" style="color: #f2f2f2; background-color:#0b3ed9;">النتيجة</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        {% if stu %}
+        <div class="col-md-12">
+            <div class="res shadow mt-5">
+                <div class="mb-3">
+                    <img class="rounded-circle" width="50" height="50" src="/static/main/img/logo/logo.png" alt="">
+                </div>
+                <h5><i class="bi bi-person-fill"></i> الاسم : {{stu}} </h5>
+                <h5><i class="bi bi-card-heading"></i> الفرقة : {{stu.year}}</h5>
+                <h6><i class="bi bi-clipboard-data"></i> النتيجة :</h6>
+                <ul class="list-group">
+                    {% for r in stu.get_result %}
+                    <li class="list-group-item mb-3 {% if r.rating == 'م' %} bg-success text-light {% elif r.rating == 'ض جـ'  %} text-danger {% elif r.rating == 'غائب'  %}  text-danger {% elif r.rating == 'غـ'  %}  text-danger  {% endif %}"
+                        aria-current="true">
+                        {{r.subject}} : <strong> {{r.rating}}</strong>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}
+
+{% comment %}
+<!-- <div class="col-md-12">
+    {% if stu %}
+    <div class="card text-left mt-5">
+        <div class="card-body">
+            <h4 class="card-title">الاسم : <strong>{{stu}}</strong></h4>
+            <h4 class="card-title">السنة الدارسية : <strong>{{stu.year}}</strong></h4>
+            <p class="card-text">
+                <ul class="list-group">
+                    {% for r in stu.get_result %}
+                    <li class="list-group-item mb-3 {% if r.rating == 'م' %} bg-success text-light {% elif r.rating == 'ض جـ'  %} text-danger {% elif r.rating == 'غائب'  %}  text-danger {% elif r.rating == 'غـ'  %}  text-danger  {% endif %}"
+                        aria-current="true">
+                        {{r.subject}} - <strong>{{r.rating}}</strong>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </p>
+        </div>
+    </div>
+    {% endif %}
+</div> -->
+{% endcomment %}

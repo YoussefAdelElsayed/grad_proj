@@ -1,0 +1,14 @@
+asgiref
+certifi
+Django
+django-ckeditor
+django-crispy-forms
+django-js-asset
+django-ranged-response
+django-recaptcha
+django-tinymce
+Pillow
+sentry-sdk
+sqlparse
+tzdata
+urllib3

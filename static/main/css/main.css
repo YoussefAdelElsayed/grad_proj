@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&display=swap');
+
+* {
+    font-family: 'Tajawal',
+        sans-serif;
+}
+
+body {
+    background-color: #F2F2F2;
+}
+
+/**********Start NavBar**********/
+/* #navbar {
+    position: relative;
+    top: 1px;
+    width: 100%;
+    transition: all 0.9s;
+    z-index: 99999;
+    background: rgb(9, 78, 134);
+    background: linear-gradient(180deg, rgba(32, 104, 163, 0.754) 0%, rgba(122, 164, 199, 0) 100%); 
+}
+
+
+.nav-link-custom {
+    color: rgb(182, 49, 49) !important;
+}
+
+.nav-link-custom:hover {
+    border-bottom: #fff solid 2px;
+    transition: all 0.5s;
+}
+
+.navbar-collapse-custom {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    animation: gradient 40s ease infinite;
+    background-size: 400% 400%;
+
+}
+
+
+.progress-container {
+    width: 100%;
+    height: 8px;
+    opacity: 0;
+    background: #000000;
+    transition: all 0.4s;
+}
+
+
+.progress-bar {
+    height: 8px;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    width: 0%;
+    animation: gradient 5s ease infinite;
+    background-size: 400% 400%;
+
+} */
+
+/**********End NavBar**********/
+
+
+
+.customCard {
+    background-image: linear-gradient(60deg, #3d3393 0%, #2b76b9 37%, #2cacd1 65%, #35eb93 100%);
+    color: #fff;
+    padding: 1rem;
+    border-radius: 12px;
+}
+
+/* .customCard2 {
+   background-image: linear-gradient(to top, #f43b47 0%, #453a94 100%);
+    color: #fff;
+    padding: 1rem;
+    border-radius: 12px;
+} */
+
+
+
+
+
+.customCard3 {
+    background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+    color: #fff;
+    padding: 1rem;
+    border-radius: 12px;
+}
+
+/* .contactLogo {
+    background-image: url("../img/background/canal-gc0b76dc86_1920.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: #333;
+    background-blend-mode: overlay;
+    padding: 20px;
+
+} */
+
+
+.section2 {
+    background-image: url("../img/background/main_door.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #333;
+    background-blend-mode: overlay;
+    color: #fff;
+}
+
+.section3 {
+    background-image: linear-gradient(-225deg, #3D4E81 0%, #5753C9 48%, #6E7FF3 100%);
+    /* background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #00000060;
+    background-blend-mode: multiply; */
+
+
+}
+
+
+.section4 {
+
+    padding: 30px;
+    text-align: center;
+}
+
+.section5{
+    
+    padding: 30px;
+    color: #333;
+}
+
+
+/* #005CE6 */
+
+.res{
+    background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+    padding: 15px;
+    border-radius: 15px;
+}

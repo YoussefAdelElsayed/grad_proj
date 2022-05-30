@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+
+    <h1 class="text-center mb-5">محاضرات {{lectures}} </h1>
+    <div class="row">
+    
+        {% if lectures.get_lectures %}
+        {% for lecture in lectures.get_lectures%}
+        <a href="{% url 'lecture_details' lecture.slug %}" class="text-decoration-none text-dark">
+            <div class="col-md-12">
+                <div class="card mb-3 text-left">
+                    <div class="card-body">
+                        <h1 class="card-title ">{{lecture}}</h1>
+                        <h6 class="card-title text-danger"><span class="text-dark">مادة :</span> {{lecture.subject}}
+                        </h6>
+                        <p><img src="{{lecture.doctor.photo.url}}" width="30" height="30" class="rounded-circle" alt="">
+                            {{lecture.doctor}}</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+        {% else %}
+        <h3 class="display-6 text-center text-primary">لا يوجد محاضرات الان </h3>
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}

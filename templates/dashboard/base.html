@@ -1,0 +1,40 @@
+<!DOCTYPE html>{% load static %}
+<html lang="ar" dir="rtl">
+<head>
+    <!--bootstrap -V 5.1.3x-->
+    <title>{{title}}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'main/css/lib/bootstrap-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/lib/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/lib/bootstrap.rtl.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/lib/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/lib/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/lib/jquery.dataTables.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/fromNet.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/dashmain.css' %}">
+    <!--jquery -V 3.6.0-->
+</head>
+
+<body>
+
+    {% include "dashboard/navbar.html" %}
+
+    {% block content %}
+
+    {% endblock content %}
+
+    {% include "dashboard/footer.html" %}
+
+
+    <script src="{% static 'main/js/lib/jquery.min.js' %}"></script>
+    <script src="{% static 'main/js/lib/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'main/js/lib/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'main/js/lib/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'main/js/sendRequest.js' %}"></script>
+    <script src="{% static 'main/js/frontend.js' %}"></script>
+    <script src="{% static 'main/js/dashmain.js' %}"></script>
+
+</body>
+
+</html>

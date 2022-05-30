@@ -1,0 +1,71 @@
+{% extends "dashboard/base.html" %}
+{% block content %}
+<style>
+    .bg_cu
+    {
+        color: #f2f2f2;
+        background-color: #0b3ed9;        
+    }
+</style>
+
+
+
+<section class="posts" style="height: 100vh;">
+    <div class="container mt-5">
+        <div class="row p-5">
+            <div class="col-md-4">
+                <a href="{% url 'show_posts' %}" class="text-decoration-none text-light">
+                    <div class="card mb-5 shadow rounded-3 text-white bg_cu">
+                        <div class="card-body text-center">
+                            <h2 class="card-title ">الاخبار <i class="bi bi-newspaper"></i></h2>
+                            <h6 class="card-text">عدد الاخبار : {{posts.count}}</h6>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="{% url 'show_doctors' %}" class="text-decoration-none text-light">
+                    <div class="card mb-5 shadow rounded-3 text-white bg_cu">
+                        <div class="card-body text-center">
+                            <h2 class="card-title ">الاساتذة <i class="bi bi-person-workspace"></i></h2>
+                            <h6 class="card-text">عدد الاساتذة : {{doctors.count}}</h6>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="{% url 'show_lectures' %}" class="text-decoration-none text-light">
+                    <div class="card mb-5 shadow rounded-3 text-white bg_cu">
+                        <div class="card-body text-center">
+                            <h2 class="card-title ">المحاضرات <i class="bi bi-play-fill"></i></h2>
+                            <h6 class="card-text">عدد المحاضرات : {{lectures.count}}</h6>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="row p-5">
+            <div class="col-md-6">
+                <a href="{% url 'department' %}" class="text-decoration-none text-light">
+                    <div class="card mb-5 shadow rounded-3 text-white bg_cu">
+                        <div class="card-body text-center">
+                            <h2 class="card-title ">الاقسام <i class="bi bi-boxes"></i></h2>
+                            <h6 class="card-text">عدد الاقسام : {{departments.count}}</h6>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6">
+                <a href="{% url 'show_asks' %}" class="text-decoration-none text-light">
+                    <div class="card mb-5 shadow rounded-3 text-white bg_cu">
+                        <div class="card-body text-center">
+                            <h2 class="card-title ">الاسئلة <i class="bi bi-patch-question"></i></h2>
+                            <h6 class="card-text">عدد الاسئلة : {{asks.count}}</h6>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

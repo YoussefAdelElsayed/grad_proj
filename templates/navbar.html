@@ -1,0 +1,69 @@
+{% load static %}
+{% url 'home' as home %}
+{% url 'dean' as dean %}
+{% url 'all_posts' as all_posts %}
+{% url 'doctors' as doctors %}
+{% url 'ask' as ask %}
+{% url 'years' as years %}
+{% url 'result' as result %}
+
+<!-- <header style="background-color: #032f70; z-index: 99;" class="w-100 p-1 text-light position-relative">
+    <div class="container-fluid">
+        <div class="d-flex flex-row justify-content-between">
+            <small class="mb-0 me-2">
+                من الساعة 9 صباحا حتى 2 مساءً
+                <i class="bi bi-clock-history text-light"></i>
+            </small>
+            <div class="d-flex flex-row">
+                <a href="https://bit.ly/3sBe0ok">
+                    <i class="bi bi-facebook text-light"></i>
+                </a>
+
+            </div>
+        </div>
+    </div>
+</header>  -->
+
+
+<nav {% if request.path == home %} id="navbar" {% endif %}
+    class="navbar navbar-expand-lg navbar navbar-dark fw-bold"
+    style="z-index: 999; position: sticky; top: 0px; background-color:#253259;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'home' %}">
+            <img src="{% static 'main/img/logo/logo.jpg' %}" width="50" height="50" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link {% if request.path == home %} active{% endif %}" href="{% url 'home' %}">الصفحة
+                    الرئسية</a>
+                <!-- <a class="nav-link {% if request.path == dean %} active{% endif %}" href="{% url 'dean' %}">كلمة
+                    العميد</a> -->
+                <a class="nav-link {% if request.path == all_posts %} active{% endif %}"
+                    href="{% url 'all_posts' %}">الاخبار </a>
+                <a class="nav-link {% if request.path == doctors %} active{% endif %}" href="{% url 'doctors' %}">هيئة  التدريس</a>
+
+                <a class="nav-link {% if request.path == years%} active{% endif %}" href="{% url 'years' %}">محاضرات</a>
+
+                <a class="nav-link {% if request.path == ask%} active{% endif %}" href="{% url 'ask' %}">اسأل</a>
+
+                <a class="nav-link {% if request.path == result%} active{% endif %}" href="{% url 'result' %}">النتيجة</a>
+                {% if request.user.is_authenticated %}
+                <a class="nav-link btn active fw-bold" style="background-color:#F2F2F2; color: #16348C;" href="{% url 'overview' %}">
+                    لوحة التحكم
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <!-- <div class="progress-container position-fixed " style="top: 4.2rem; z-index: 9999999;">
+        <div class="progress-bar" id="myBar"></div>
+    </div> -->
+</nav>
+
+<nav>
+
+</nav>

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-5">محاضرات فرقة</h2>
+    <div class="row">
+        {% for year in years %}
+        <tr class="{% cycle 'text-white bg-primary' 'text-white bg-secondary' 'text-white bg-success' 'text-white bg-danger' as rowcolors %}"></tr>
+        <div class="col-md-6">
+            <a href="{% url 'lectures' year.slug %}" class="text-decoration-none">
+                <div class="card shadow mb-3 {{rowcolors}} text-left">
+                    <div class="card-body text-center ">
+                        <h4 class="card-title fw-bold">{{year.title}}</h4>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

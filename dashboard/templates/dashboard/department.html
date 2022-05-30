@@ -1,0 +1,33 @@
+{% extends "dashboard/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <form method="post">
+                {% csrf_token %}
+                {{form|crispy}}
+                <button type="submit" name="add_department" class="btn btn-sm mt-3 btn-primary">اضف</button>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <ul class="list-group">
+                <li class="list-group-item active" aria-current="true">الاقسام</li>
+                {% for department in departments %}
+                <li class="list-group-item d-flex justify-content-between">
+                    {{department.title}}
+                    <form method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="department_id" value="{{department.id}}">
+                        <button type="submit" name="delete_department" class="btn btn-outline-danger">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </form>
+                </li>
+                {% endfor %}
+
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock content %}

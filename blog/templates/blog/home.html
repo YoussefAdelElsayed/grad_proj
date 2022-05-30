@@ -1,0 +1,310 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- slide show -->
+<section id="carousel" class="mb-3" >
+    <div id="slide_show" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#slide_show" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#slide_show" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#slide_show" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{{info.slide.url}}" class="d-block w-100 " alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>First Photo Of Me</h5>
+              <p>Some representative placeholder content for the first slide.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="{{info.slide2.url}}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Second slide label</h5>
+              <p>Some representative placeholder content for the second slide.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="{{info.slide3.url}}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Third slide label</h5>
+              <p>Some representative placeholder content for the third slide.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#slide_show" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#slide_show" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+    </div>	
+
+</section>
+
+
+<!-- welcome section -->
+<section>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Departments  -->
+<section class=" py-5" style="margin-bottom: 150px;">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="mb-5 text-center">
+                <h1 class="text-center mb-5 p-5 fw-bold" style="color:  #16348C;">
+                    اقسام الكلية
+                </h1>
+            </div>
+            <div class="col-md-3">
+                <a href="" class="btn">
+                    <div class="card border-0 shadow-lg" style="width: 18rem; border-radius: 15px;">
+                        <img src="" alt="">
+                        <div class="card-body text-center">
+                          <h5 class="card-title fs-2"> علوم الحاسب</h5>
+                          <p class="card-text"> </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="" class="btn">
+                    <div class="card border-0 shadow-lg" style="width: 18rem; border-radius: 15px;">
+                        <img src="" alt="">
+                        <div class="card-body text-center">
+                          <h5 class="card-title fs-2"> تكنولوجيا المعلومات</h5>
+                          <p class="card-text"> </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="" class="btn">
+                    <div class="card border-0 shadow-lg" style="width: 18rem; border-radius: 15px;">
+                        <img src="" alt="">
+                        <div class="card-body text-center">
+                          <h5 class="card-title fs-2"> أكاديمية هواوي</h5>
+                          <p class="card-text"> </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- staff cards -->
+<section class="section6 p-5" style="margin-bottom: 150px; background-color: #16348c;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 order-last order-lg-first">
+                <div class="owl-carousel owl-theme mt-5 mt-lg-0">
+                    {% for doctor in doctors %}
+                    <div>
+                        <a href="" class="btn"></a>
+                        <div class="card text-center border-0 shadow-lg" style="width: 18rem; border-radius: 15px;">
+                            <img src="{{doctor.photo.url}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">{{doctor.fullName}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="d-flex justify-content-end mt-3">
+                    <a href="{% url 'doctors' %}" class="text-center fw-bold" style="color:  #f2f2f2;">عرض كل النخب</a>
+                </div>
+            </div>
+            <div class="col-md-6 order-first order-lg-last d-flex flex-column justify-content-center">
+                <h1 class="text-center fw-bold" style="color:  #f2f2f2;"> بعض اعضاء هيئة
+                    التدريس
+                </h1>
+                
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- timeline news & videos -->
+<section class="section1 " style="margin-bottom: 150px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h1 class="fs-1 text-center p-2 border-0 shadow-lg mb-5" style="border-radius: 15px; background-color: #0B3ED9; color: #f2f2f2;">اخر الاخبار <i class="bi bi-newspaper text-white"></i></h1>
+                {% for post in posts %}
+                <div class="card mb-3 p-2 shadow text-center" style="border-radius: 12px;">
+                    {% if post.cover %}
+                    <img class="card-img-top shadow" width="700" height="350" src="{{post.cover.url}}" alt=""
+                        style="border-radius: 15px;">
+                    {% endif %}
+                    <div class="card-body">
+                        <h4 class="card-title">{{post.title}}</h4>
+                        <p class="card-text">{{post.body|striptags|safe|truncatewords:10}}... <a
+                                href="{% url 'post_details' post.id %}"> المزيد</a></p>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="d-flex justify-content-center mt-3 mb-5">
+                    <a href="{% url 'all_posts' %}" class="text-center fw-bold">عرض كل الاخبار</a>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <h1 class="fs-1 text-center p-2 border-0 shadow-lg mb-5" style="border-radius: 15px; background-color: #0B3ED9; color: #f2f2f2;">اخر المحاضرات <i class="bi bi-person-video3"></i></h1>
+                {% for lecture in lectures %}
+                <a href="{% url 'lecture_details' lecture.slug %}" class="text-decoration-none text-dark">
+                    <div class="card mb-3 p-2 shadow text-center" style="border-radius: 12px;">
+                        <div class="card-body">
+                            <h1 class="card-title ">{{lecture}}</h1>
+                            <h6 class="card-title text-danger"><span class="text-dark">مادة :</span>
+                                {{lecture.subject}} </h6>
+                            <p><img src="{{lecture.doctor.photo.url}}" width="30" height="30" class="rounded-circle"
+                                    alt=""> {{lecture.doctor}}</p>
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+                <div class="d-flex justify-content-center mt-3">
+                    <a href="{% url 'years' %}" class="text-center fw-bold">عرض كل المحاضرات</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Dean -->
+<!-- <section class="section2 mt-5  py-5" style="margin-bottom: 150px;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 d-flex justify-content-center align-items-center flex-column">
+                <h2 class="text-center fw-bold display-6">كلمة العميد</h2>
+                <div class="text-center  p-3 text-wrap rounded-3" style="border: solid 2px #053c8f;">
+                    <div class="d-flex flex-column  align-items-center">
+                        <img src="/static/main/img/background/3amed2.jpeg" class="rounded-circle" width="50" height="50"
+                            alt="">
+                        <small class=""> Dr. Yasser Fouad </small>
+                    </div>
+                    <p class="fs-4 lh-lg">
+
+                        <a href="{% url 'dean' %}">المزيد</a>
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section> -->
+
+
+
+
+<!-- 
+<section class="section4 ">
+    <div class="container">
+        <h2 class="fw-bold ">الاحصائيات <i class="bi bi-reception-4 text-warning"></i></h2>
+        <div class="row">
+            <div class="four col-md-3">
+                <div class="counter-box colored"> <i class="fa fa-thumbs-o-up"></i> <span
+                        class="counter">{{info.coun}}</span>
+                    <p>أداء الطلاب</p>
+                </div>
+            </div>
+            <div class="four col-md-3">
+                <div class="counter-box"> <i class="fa fa-group"></i> <span class="counter">{{info.coun2}}</span>
+                    <p>عدد أساتذة والمعيدين</p>
+                </div>
+            </div>
+            <div class="four col-md-3">
+                <div class="counter-box"> <i class="fa fa-shopping-cart"></i> <span
+                        class="counter">{{info.coun3}}</span>
+                    <p>خريجي المعهد</p>
+                </div>
+            </div>
+            <div class="four col-md-3">
+                <div class="counter-box"> <i class="fa fa-user"></i> <span class="counter">{{info.coun4}}
+                    </span>
+                    <p>عدد ساعات التدريس</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+
+
+
+
+<!-- background-image: url('/static/main/img/max-saeling-m8nRxnGFWVc-unsplash.jpg'); background-position: center; background-size: cover; background-repeat: no-repeat; -->
+
+
+<!-- about -->
+<section class="about d-flex justify-content-center align-items-center" style="height: calc( 100vh - 200px ); background-color: #f2f2f2; ">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="fw-bold" style="color:  #0c2ff2;">عن الكلية</h2>
+                <h3>{{info.about}}</h3>
+            </div>
+            <div class="col-md-6">
+                <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="static/main/img/background/canal-gc0b76dc86_1920.jpg" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="static/main/img/background/3amed.jpeg" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="static/main/img/background/3amed.jpeg" class="d-block w-100" alt="...">
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- contact us -->
+<section class="section9 contactLogo text-light py-5" style="background-color:#0b3ed9 ; ">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6   rounded-3 d-flex flex-column justify-content-center align-items-center">
+                <div style="width: 100%">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27647.400975021406!2d32.49313564035526!3d29.98158184191716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14562f19ec4a750d%3A0x199c3d73dd480bb1!2sFaculty%20of%20computers%20and%20information%20-%20Suez%20University!5e0!3m2!1sen!2seg!4v1653577886833!5m2!1sen!2seg" width="600" height="450" style="border:0; border-radius: 15px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="shadow-lg">
+                    </iframe>
+                </div>
+            </div>
+            <div class="col-md-6 ">
+                <form class="d-flex flex-column p-3 text-end mb-4 p-5 shadow-lg" style="border-radius: 15px; background-color: #f2f2f2; ">
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label fw-bold" style="color: #0B3ED9;">Email address</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label fw-bold" style="color: #0B3ED9;">Leave us a message</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+                    <button type="submit" class="btn " style="background-color:#16348c ; color:#f2f2f2;">ارسال</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+{% endblock content %}

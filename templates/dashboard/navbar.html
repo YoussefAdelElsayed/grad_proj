@@ -1,0 +1,31 @@
+{% load static %}
+{% url 'overview' as overview %}
+{% url 'show_posts' as show_posts %}
+{% url 'department' as department %}
+{% url 'show_lectures' as show_lectures %}
+{% url 'edit_home' as edit_home %}
+{% url 'show_asks' as show_asks %}
+
+
+<nav class="navbar navbar-expand-lg navbar-dark fw-bold"
+style="z-index: 999; position: sticky; top: 0px; background-color:#253259;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'home' %}">
+            <img src="{% static 'main/img/logo/logo.jpg' %}" width="50" height="50" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link {% if request.path == overview %} active{% endif %}" href="{% url 'overview' %}">نظرة عامة</a>
+                <a class="nav-link {% if request.path == show_posts %} active{% endif %}" href="{% url 'show_posts' %}">الاخبار</a>
+                <a class="nav-link {% if request.path == department %} active{% endif %}" href="{% url 'department' %}">الاقسام</a>
+                <a class="nav-link {% if request.path == show_lectures %} active{% endif %}" href="{% url 'show_lectures' %}">المحاضرات </a>
+                <a class="nav-link {% if request.path == show_asks %} active{% endif %}" href="{% url 'show_asks' %}">الاسئلة </a>
+                <a class="nav-link {% if request.path == edit_home %} active{% endif %}" href="{% url 'edit_home' %}">تعديل الرئسية</a>
+            </div>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-9">
+            <video  poster="/static/main/img/thum.png" class="img-fluid" controls>
+                <source src="{{lecture.video.url}}" type="video/mp4">
+            </video>
+        </div>
+        <div class="col-md-3">
+            <div class="card mt-lg-0 mt-5 text-left">
+                <div class="card-body">
+                    <h4 class="card-title">{{lecture.title}}</h4>
+                    <p class="card-text">مادة :{{lecture.subject}}</p>
+                    <p class="card-text text-primary fw-bold">فرقة : {{lecture.year}}</p>
+                    <p><img src="{{lecture.doctor.photo.url}}" width="30" height="30" class="rounded-circle" alt="">
+                        {{lecture.doctor}}</p>
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
