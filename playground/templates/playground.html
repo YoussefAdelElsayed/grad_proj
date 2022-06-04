@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+{% load static %}
+{% if not lang_url %}
+<div class="container py-5" style="">
+        <div class="text-center">
+            
+            <div class="row">
+                
+                <div class="col-3">
+                    <div class="card mb-3">
+                        <a class="card-body lead text-black text-decoration-none" href="?lang=c">
+                            C
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-3">
+                    <div class="card mb-3">
+                        <a class="card-body lead text-black text-decoration-none" href="?lang=cpp">
+                            C Plus Plus
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-3">
+                    <div class="card mb-3">
+                        <a class="card-body lead text-black text-decoration-none" href="?lang=cs">
+                            C Sharp
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-3">
+                    <div class="card mb-3">
+                        <a class="card-body lead text-black text-decoration-none" href="?lang=dart">
+                            Dart
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-3">
+                    <div class="card mb-3">
+                        <a class="card-body lead text-black text-decoration-none" href="?lang=go">
+                            GO
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-3">
+                    <div class="card mb-3">
+                        <a class="card-body lead text-black text-decoration-none" href="?lang=java">
+                            Java
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-3">
+                    <div class="card mb-3">
+                        <a class="card-body lead text-black text-decoration-none" href="?lang=r">
+                            R
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-3">
+                    <div class="card mb-3">
+                        <a class="card-body lead text-black text-decoration-none" href="?lang=nodejs">
+                            Node JS
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-3">
+                    <div class="card mb-3">
+                        <a class="card-body lead text-black text-decoration-none" href="?lang=php">
+                            PHP
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-3">
+                    <div class="card mb-3">
+                        <a class="card-body lead text-black text-decoration-none" href="?lang=py">
+                            Python 3
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-3">
+                    <div class="card mb-3">
+                        <a class="card-body lead text-black text-decoration-none" href="?lang=rust">
+                            Rust
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-3">
+                    <div class="card mb-3">
+                        <a class="card-body lead text-black text-decoration-none" href="?lang=ruby">
+                            Ruby
+                        </a>
+                    </div>
+                </div>
+                
+                 <div class="col-3">
+                    <div class="card mb-3">
+                        <a class="card-body lead text-black text-decoration-none" href="?lang=asm">
+                            Assembly (FASM)
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-3">
+                    <div class="card mb-3">
+                        <a class="card-body lead text-black text-decoration-none" href="?lang=prolog">
+                            Prolog
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-3">
+                    <div class="card mb-3">
+                        <a class="card-body lead text-black text-decoration-none" href="?lang=bash">
+                            Bash
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-3">
+                    <div class="card mb-3">
+                        <a class="card-body lead text-black text-decoration-none" href="?lang=sql">
+                            SQLite
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+
+
+</div>
+{% endif %}
+
+{% if lang_url %}
+<div class="container-fluid py-5" style="min-height: 500px">
+    <div data-pym-src="{{ lang_url }}"></div>
+</div>
+
+
+<script src="{% static 'main/js/playground.js' %}"></script>
+{% endif %}
+
+{% endblock content %}

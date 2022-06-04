@@ -28,6 +28,7 @@ urlpatterns = [
     path('', include("profiles.urls")),
     path('', include("edu.urls")),
     path('', include("results.urls")),
+    path('', include("playground.urls")),
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
